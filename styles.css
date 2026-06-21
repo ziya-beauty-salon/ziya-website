@@ -1,0 +1,120 @@
+body{
+margin:0;
+font-family:Arial;
+background:#050505;
+color:#f5f5f5;
+overflow-x:hidden;
+}
+
+/* GLITTER BACKGROUND */
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%, rgba(212,175,55,0.25), transparent 40%),
+radial-gradient(circle at 80% 30%, rgba(155,89,182,0.25), transparent 40%),
+radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05), transparent 60%);
+z-index:-1;
+animation:move 10s infinite alternate;
+}
+
+@keyframes move{
+0%{transform:scale(1);}
+100%{transform:scale(1.05) rotate(1deg);}
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #333;
+}
+
+.logo{
+font-weight:bold;
+color:#d4af37;
+font-size:20px;
+}
+
+nav{
+position:relative;
+}
+
+nav select{
+background:#111;
+color:white;
+padding:8px;
+border:1px solid #333;
+}
+
+/* HEADINGS */
+h1,h2{
+text-align:center;
+text-decoration:underline;
+color:#d4af37;
+}
+
+/* SECTIONS */
+section{
+max-width:1000px;
+margin:auto;
+padding:60px 20px;
+line-height:1.8;
+}
+
+/* CARDS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:12px;
+border:1px solid #333;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+border-color:#9b59b6;
+}
+
+/* FLOATING BUTTONS */
+.fab{
+position:fixed;
+right:20px;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:20px;
+}
+
+.whatsapp{bottom:20px;background:#25D366;}
+.instagram{bottom:90px;background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);}
+.call{bottom:160px;background:#444;}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.gallery div{
+height:160px;
+background:#111;
+border:1px solid #333;
+border-radius:10px;
+}
